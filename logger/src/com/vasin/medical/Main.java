@@ -14,13 +14,11 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 public class Main extends Application {
 	
 	private Stage primaryStage;
-	private BorderPane rootLayout;
 	private MainController controller;
 	private DataBase db;
 	
@@ -41,8 +39,7 @@ public class Main extends Application {
 			e1.printStackTrace();
 		}
 
-		initRootLayout();
-		showMainView();	
+		initMainView();	
 		
 		try {
 			controller.setListOfTests(db.getAllTests());
@@ -54,24 +51,6 @@ public class Main extends Application {
 		}
 	}
 
-	private void initRootLayout() {
-		try {
-			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(Main.class.getResource("view/RootView.fxml"));
-			rootLayout = (BorderPane) loader.load();
-			
-			Scene scene = new Scene(rootLayout);
-			primaryStage.setScene(scene);
-			primaryStage.show();
-			
-
-			
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		
-	}
-	
 	private void initDB() throws Exception {
 		db = new DataBase("sa", "", "jdbc:h2:~/medical");
 	}
@@ -134,12 +113,14 @@ public class Main extends Application {
 		}
 	}
 	
-	private void showMainView() {
+	private void initMainView() {
 		try {
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(Main.class.getResource("view/MainView.fxml"));
 			AnchorPane mainView = (AnchorPane) loader.load();
-			rootLayout.setCenter(mainView);
+			Scene scene = new Scene(mainView);
+			primaryStage.setScene(scene);
+			primaryStage.show();
 			controller = loader.getController();
 			controller.setMainApp(this);
 			controller.startUp();
