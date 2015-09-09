@@ -52,7 +52,7 @@ public class Main extends Application {
 	}
 
 	private void initDB() throws Exception {
-		db = new DataBase("sa", "", "jdbc:h2:~/medical");
+		db = new DataBase("MEDICAL_ADMIN", "gj264jgb63jn", "jdbc:h2:~/medical");
 	}
 	
 	public DataBase getDB() {

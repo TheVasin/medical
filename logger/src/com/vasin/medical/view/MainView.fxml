@@ -49,7 +49,7 @@
                            </columnResizePolicy>
                         </TableView>
                         <TextField fx:id="addTestField" layoutY="345.0" promptText="Введите название анализа" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="127.0" />
-                        <Button fx:id="addTestButton" layoutX="648.0" layoutY="345.0" maxHeight="25.0" maxWidth="110.0" minHeight="25.0" minWidth="110.0" mnemonicParsing="false" onAction="#addTest" prefHeight="25.0" prefWidth="110.0" text="Добавить анализ" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="7.0" />
+                        <Button fx:id="addTestButton" defaultButton="true" layoutX="648.0" layoutY="345.0" maxHeight="25.0" maxWidth="110.0" minHeight="25.0" minWidth="110.0" mnemonicParsing="false" onAction="#addTest" prefHeight="25.0" prefWidth="110.0" text="Добавить анализ" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="7.0" />
                      </children>
                   </AnchorPane>
             </content>

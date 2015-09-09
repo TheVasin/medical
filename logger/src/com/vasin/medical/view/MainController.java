@@ -113,6 +113,13 @@ public class MainController implements javafx.fxml.Initializable {
 	}
 	
 	public void addTest() {
+		String name = addTestField.getText();
+		if (name.isEmpty()) {
+			Alert error = new Alert(AlertType.ERROR, "Введите пожалуйста имя.");
+			error.setHeaderText("Ошибка, пустое имя.");
+			error.show();
+			return;
+		}
 		mainApp.addTest(addTestField.getText());
 	}
 	
