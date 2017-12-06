@@ -3,8 +3,9 @@
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
-# Idea folder
+# Idea folders and files
 .idea/
+*.iml
 
 # Mac OS folder
 .DS_Store
