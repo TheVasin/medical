@@ -2,7 +2,12 @@
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
+
+# Idea folder
 .idea/
+
+# Mac OS folder
+.DS_Store
 
 # Package Files #
 *.jar
